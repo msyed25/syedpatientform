@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework 4 | Patient Intake Form</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="fixed-header">
+    <div class="header-flex">
+      <img src="medlogo.png" alt="Clinic Logo" id="logo">
+      <h2 id="greeting">Welcome New User</h2>
+    </div>
+    <div id="newUserOption" style="display:none; margin-top: 5px;">
+      <label><input type="checkbox" id="resetUser"> Not you? Start as a new user</label>
+    </div>
+  </header>
+
+  <main class="format">
+    <form id="patientForm" action="thankyou.html" method="GET" novalidate>
+      <!-- Reuse all input fields from homework3.html including id attributes -->
+      <!-- Only first name field shown here for brevity -->
+      <label for="fname">First Name:</label>
+      <input type="text" id="fname" name="fname" required>
+      <span class="error-message" id="fname-error"></span>
+
+      <!-- Remember Me Checkbox -->
+      <label><input type="checkbox" id="rememberMe" checked> Remember Me</label>
+
+      <!-- Buttons -->
+      <button type="button" id="validate-btn">Validate</button>
+      <button type="submit" id="submit-btn" disabled>Submit</button>
+      <button type="reset">Clear</button>
+    </form>
+
+    <!-- Iframe section -->
+    <section class="iframe-wrapper">
+      <h3>Helpful Reference</h3>
+      <iframe src="https://www.w3schools.com/html/" width="100%" height="300px" title="HTML Tutorial"></iframe>
+    </section>
+  </main>
+
+  <footer class="fixed-footer">
+    <p>&copy; 2025 Houston Clinic | Patient Intake System</p>
+  </footer>
+</body>
+</html>
