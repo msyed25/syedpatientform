@@ -1,19 +1,42 @@
-
+/* Typography and Page Setup */
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: #f3f6f9;
     margin: 0;
-    padding: 0;
+    padding-top: 100px;
+    padding-bottom: 70px;
 }
 
-header {
+/* Header and Footer */
+header, #main-header {
     background-color: #0066cc;
     color: white;
     padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+footer, #main-footer {
+    background-color: #0066cc;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 header h2 {
     margin: 0;
+}
+
+#logo {
+    width: 60px;
+    height: auto;
+    border-radius: 8px;
 }
 
 hr {
@@ -22,23 +45,7 @@ hr {
     border-top: 2px solid #ccc;
 }
 
-footer {
-    background-color: #0066cc;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 40px;
-}
-
-footer a {
-    color: #ffd700;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
+/* Main Content Container */
 .format {
     margin: 30px auto;
     width: 70%;
@@ -48,6 +55,7 @@ footer a:hover {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+/* Table Styling */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -63,11 +71,15 @@ td {
     padding: 10px;
 }
 
+/* Inputs */
 input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="date"],
-input[type="range"] {
+input[type="range"],
+input[type="tel"],
+select,
+textarea {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
@@ -76,6 +88,15 @@ input[type="range"] {
     box-sizing: border-box;
 }
 
+textarea {
+    resize: vertical;
+}
+
+input[type="range"] {
+    width: 80%;
+}
+
+/* Buttons */
 input[type="submit"],
 input[type="reset"],
 button {
@@ -95,6 +116,7 @@ button:hover {
     background-color: #004c99;
 }
 
+/* Error Messaging */
 .error-message {
     color: red;
     font-size: 0.85em;
@@ -102,16 +124,13 @@ button:hover {
     margin-top: 4px;
 }
 
-#review-section {
-    text-align: center;
-    margin-top: 20px;
-}
-
+/* Pain Display */
 #painValue {
     font-weight: bold;
     margin-left: 10px;
 }
 
+/* Responsive Layout */
 @media screen and (max-width: 768px) {
     .format {
         width: 90%;
@@ -125,34 +144,30 @@ button:hover {
     }
 }
 
-#logo {
-    width: 60px; 
-    height: auto;
-    border-radius: 8px; 
+/* Greeting & Reset */
+#greeting {
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 15px;
+    color: #333;
 }
 
-/* Assignment 4 Additions */
-#main-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #0066cc;
-    z-index: 1000;
+#reset-greeting {
+    margin: 10px auto;
+    display: block;
+    background-color: crimson;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
-#main-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #0066cc;
-    z-index: 1000;
+#reset-greeting:hover {
+    background-color: darkred;
 }
 
-body {
-    padding-top: 100px;
-    padding-bottom: 70px;
-}
-
+/* Iframe */
 #iframe-container {
     margin-top: 40px;
     border-top: 2px solid #ddd;
