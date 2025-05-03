@@ -32,6 +32,11 @@
       margin: 10px auto;
       display: block;
       background-color: crimson;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 8px 16px;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -54,100 +59,93 @@
           <td>First Name:</td>
           <td>
             <input type="text" id="fname" required title="Enter your first name (letters only)">
-            <span class="error-message"></span>
+            <span id="fname-error" class="error-message"></span>
           </td>
         </tr>
         <tr>
           <td>Middle Initial:</td>
-          <td><input type="text" id="mname" maxlength="1" pattern="[A-Za-z]" title="Enter one letter"></td>
+          <td><input type="text" id="mname" maxlength="1" pattern="[A-Za-z]" title="Enter one letter"><span id="mname-error" class="error-message"></span></td>
         </tr>
         <tr>
           <td>Last Name:</td>
           <td>
             <input type="text" id="lname" required title="Enter your last name (letters only)">
-            <span class="error-message"></span>
+            <span id="lname-error" class="error-message"></span>
           </td>
         </tr>
         <tr>
           <td>Email:</td>
           <td>
             <input type="email" id="email" required title="Enter a valid email address">
-            <span class="error-message"></span>
+            <span id="email-error" class="error-message"></span>
           </td>
         </tr>
         <tr>
           <td>Phone Number:</td>
           <td>
             <input type="tel" id="phone" pattern="\d{3}-\d{3}-\d{4}" placeholder="000-000-0000" required title="Format: 000-000-0000">
-            <span class="error-message"></span>
+            <span id="phone-error" class="error-message"></span>
           </td>
         </tr>
         <tr>
           <td>Date of Birth:</td>
           <td>
             <input type="date" id="dob" required title="Enter your date of birth">
-            <span class="error-message"></span>
+            <span id="dob-error" class="error-message"></span>
           </td>
         </tr>
         <tr>
-          <td>Social Security Number (SSN):</td>
+          <td>SSN:</td>
           <td>
-            <input type="password" id="ssn" pattern="\d{3}-\d{2}-\d{4}" required placeholder="123-45-6789" title="Format: 123-45-6789">
-            <span class="error-message"></span>
+            <input type="password" id="pid" placeholder="123-45-6789" required>
+            <span id="pid-error" class="error-message"></span>
           </td>
         </tr>
         <tr><th colspan="2">Address</th></tr>
         <tr>
           <td>Address Line 1:</td>
-          <td><input type="text" id="addr1" required title="Enter your street address"></td>
+          <td><input type="text" id="addr1" required><span id="addr1-error" class="error-message"></span></td>
         </tr>
         <tr>
           <td>Address Line 2:</td>
-          <td><input type="text" id="addr2" title="Enter apartment, suite, etc. (optional)"></td>
+          <td><input type="text" id="addr2"><span id="addr2-error" class="error-message"></span></td>
         </tr>
         <tr>
           <td>City:</td>
-          <td><input type="text" id="city" required title="Enter your city"></td>
+          <td><input type="text" id="city" required><span id="city-error" class="error-message"></span></td>
         </tr>
         <tr>
           <td>State:</td>
           <td>
-            <select id="state" required title="Select your state">
+            <select id="state" required>
               <option value="">--Select--</option>
               <option value="TX">TX</option>
               <option value="CA">CA</option>
               <option value="NY">NY</option>
             </select>
+            <span id="state-error" class="error-message"></span>
           </td>
         </tr>
         <tr>
           <td>Zip Code:</td>
-          <td>
-            <input type="text" id="zip" pattern="\d{5}(-\d{4})?" required placeholder="12345 or 12345-6789" title="Enter ZIP code">
-          </td>
+          <td><input type="text" id="zip" required><span id="zip-error" class="error-message"></span></td>
         </tr>
-        <tr><th colspan="2">Medical History</th></tr>
+        <tr><th colspan="2">Create Account</th></tr>
         <tr>
-          <td>Check all that apply:</td>
-          <td>
-            <label><input type="checkbox" value="Chicken Pox" class="illness"> Chicken Pox</label>
-            <label><input type="checkbox" value="Measles" class="illness"> Measles</label>
-            <label><input type="checkbox" value="Covid-19" class="illness"> Covid-19</label>
-            <label><input type="checkbox" value="Heart Disease" class="illness"> Heart Disease</label>
-            <label><input type="checkbox" value="Diabetes" class="illness"> Diabetes</label>
-          </td>
+          <td>User ID:</td>
+          <td><input type="text" id="uid" required><span id="uid-error" class="error-message"></span></td>
         </tr>
         <tr>
-          <td>Vaccinated?</td>
+          <td>Password:</td>
           <td>
-            <label><input type="radio" name="vax" value="Yes"> Yes</label>
-            <label><input type="radio" name="vax" value="No"> No</label>
-            <label><input type="radio" name="vax" value="Unsure"> Unsure</label>
+            <input type="password" id="pword" required><span id="pword-error" class="error-message"></span>
           </td>
         </tr>
         <tr>
-          <td>Describe Symptoms:</td>
-          <td><textarea id="symptoms" rows="4" cols="40" placeholder="Please provide details" title="Describe your symptoms here (optional)"></textarea></td>
+          <td>Confirm Password:</td>
+          <td>
+            <input type="password" id="pword2" required><span id="pword2-error" class="error-message"></span>
+          </td>
         </tr>
         <tr>
           <td>Pain Level:</td>
@@ -157,38 +155,10 @@
           </td>
         </tr>
         <tr>
-          <td>Gender:</td>
-          <td>
-            <label><input type="radio" name="pgender" value="Male"> Male</label>
-            <label><input type="radio" name="pgender" value="Female"> Female</label>
-            <label><input type="radio" name="pgender" value="Other"> Other</label>
-          </td>
-        </tr>
-        <tr><th colspan="2">Create Your Account</th></tr>
-        <tr>
-          <td>Patient ID:</td>
-          <td>
-            <input type="password" id="uid" required title="Enter your patient ID">
-            <span class="error-message"></span>
-          </td>
-        </tr>
-        <tr>
-          <td>Password:</td>
-          <td>
-            <input type="password" id="pword" required title="Password must be 10+ characters">
-            <span id="password-error" class="error-message"></span>
-          </td>
-        </tr>
-        <tr>
-          <td>Re-enter Password:</td>
-          <td>
-            <input type="password" id="pword2" required title="Must match the above password">
-            <span id="password2-error" class="error-message"></span>
-          </td>
-        </tr>
-        <tr>
           <td colspan="2" style="text-align:center;">
-            <input type="submit" value="Submit">
+            <label><input type="checkbox" id="rememberMe"> Remember Me</label><br>
+            <button type="button" id="validate-btn">Validate</button>
+            <input type="submit" id="submit-btn" value="Submit" disabled>
             <input type="reset" value="Clear">
             <button type="button" id="review-btn">Review</button>
           </td>
@@ -199,7 +169,7 @@
     <!-- Iframe Section -->
     <h3 style="margin-top:40px;">Patient Education: Visit CDC for COVID-19 Guidance</h3>
     <iframe src="https://www.cdc.gov/coronavirus/2019-ncov/index.html" title="CDC COVID-19 Information"></iframe>
-    
+
     <!-- Reset Greeting Button -->
     <button id="reset-greeting">Reset Greeting</button>
   </div>
@@ -210,48 +180,5 @@
   </footer>
 
   <script src="script.js"></script>
-  <script>
-    function setCookie(name, value, days) {
-      const expires = new Date(Date.now() + days*864e5).toUTCString();
-      document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/';
-    }
-
-    function getCookie(name) {
-      return document.cookie.split('; ').reduce((r, v) => {
-        const parts = v.split('=');
-        return parts[0] === name ? decodeURIComponent(parts[1]) : r
-      }, '');
-    }
-
-    function eraseCookie(name) {
-      document.cookie = name + '=; Max-Age=0; path=/';
-    }
-
-    const greetingDiv = document.getElementById("greeting");
-    const savedName = getCookie("firstName");
-    if (savedName) {
-      greetingDiv.textContent = `Welcome back, ${savedName}!`;
-    }
-
-    document.getElementById("review-btn").addEventListener("click", () => {
-      const fname = document.getElementById("fname").value.trim();
-      if (fname) setCookie("firstName", fname, 30);
-    });
-
-    document.getElementById("reset-greeting").addEventListener("click", () => {
-      eraseCookie("firstName");
-      greetingDiv.textContent = "";
-      alert("Greeting has been reset.");
-    });
-
-    const dateSpan = document.getElementById("dateDisplay");
-    const today = new Date();
-    dateSpan.textContent = today.toLocaleDateString("en-US", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric"
-    });
-  </script>
 </body>
 </html>
